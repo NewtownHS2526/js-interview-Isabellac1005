@@ -1,18 +1,15 @@
 // Level One - Problem Set 1: Library Access System
-// Logic Rules:
-// - If memberType is "Premium" AND age is 18 → return "can access"
-// - If age is 18 AND memberType is NOT "Premium" → return "can sign in"
-// - Else → return "go home"
 
 // ============================================
 // EASY PROBLEM 1: Simple if statement
 // ============================================
-// Task: Check if member is Premium and age is 18
-// Hint: Use if statement with && operator
 function easyProblem1(memberType, age) {
-    // TODO: Write your code here
-    // If memberType is "Premium" AND age is 18, return "can access"
-    // Otherwise, return "go home"
+    // Check if memberType is "Premium" AND age is 18
+    if (memberType === "Premium" && age === 18) {
+        return "can access";
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:
@@ -22,12 +19,13 @@ console.log("Easy 1 - Test 2:", easyProblem1("Premium", 17)); // Should print: "
 // ============================================
 // EASY PROBLEM 2: Simple if-else statement
 // ============================================
-// Task: Check if age is 18 and memberType is NOT "Premium"
-// Hint: Use if-else with !== operator
 function easyProblem2(memberType, age) {
-    // TODO: Write your code here
-    // If age is 18 AND memberType is NOT "Premium", return "can sign in"
-    // Otherwise, return "go home"
+    // Check if age is 18 and memberType is NOT "Premium"
+    if (age === 18 && memberType !== "Premium") {
+        return "can sign in";
+    } else {
+        return "go home";
+    }
 }
 
 // Test your code:
@@ -37,14 +35,19 @@ console.log("Easy 2 - Test 2:", easyProblem2("Premium", 18)); // Should print: "
 // ============================================
 // MEDIUM PROBLEM: Multiple conditions with if-else if-else
 // ============================================
-// Task: Handle all three cases using if-else if-else
-// Hint: Check conditions in order: first "Premium" + 18, then 18 + not "Premium", then else
 function mediumProblem(memberType, age) {
-    // TODO: Write your code here
-    // Use if-else if-else to handle all three cases:
-    // 1. memberType === "Premium" && age === 18 → "can access"
-    // 2. age === 18 && memberType !== "Premium" → "can sign in"
-    // 3. Everything else → "go home"
+    // First, check if memberType is "Premium" and age is 18
+    if (memberType === "Premium" && age === 18) {
+        return "can access";
+    }
+    // Then, check if age is 18 and memberType is NOT "Premium"
+    else if (age === 18 && memberType !== "Premium") {
+        return "can sign in";
+    }
+    // Otherwise, return "go home"
+    else {
+        return "go home";
+    }
 }
 
 // Test your code:
@@ -55,16 +58,20 @@ console.log("Medium - Test 3:", mediumProblem("Student", 20)); // Should print: 
 // ============================================
 // HARD PROBLEM: Function with nested if statements
 // ============================================
-// Task: Create a function that checks age first, then memberType
-// Hint: Use nested if statements - check age first, then memberType inside
 function hardProblem(memberType, age) {
-    // TODO: Write your code here
-    // Step 1: Check if age is 18
-    //   - If yes, check memberType:
-    //     - If memberType is "Premium" → return "can access"
-    //     - If memberType is NOT "Premium" → return "can sign in"
-    //   - If age is NOT 18 → return "go home"
-    // Use nested if statements!
+    // First, check if age is 18
+    if (age === 18) {
+        // If memberType is "Premium", return "can access"
+        if (memberType === "Premium") {
+            return "can access";
+        } else {
+            // If memberType is NOT "Premium", return "can sign in"
+            return "can sign in";
+        }
+    } else {
+        // If age is NOT 18, return "go home"
+        return "go home";
+    }
 }
 
 // Test your code:
